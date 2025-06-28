@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Name}} - {{.Title}}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+<div class="stars" id="stars"></div>
+
+<div class="container">
+    <header>
+        <h1>{{.Name}}</h1>
+        <h2>{{.Title}}</h2>
+    </header>
+
+    <div class="card">
+        <h3>Навыки программирования</h3>
+        <div class="skills">
+            {{range .Skills}}
+            <div class="skill">
+                <i class="{{.Icon}}"></i> {{.Name}} <span class="skill-level">{{.Level}}</span>
+            </div>
+            {{end}}
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Базы данных</h3>
+        <div class="skills">
+            {{range .DBSkills}}
+            <div class="skill">
+                <i class="fas fa-database"></i> {{.Name}} <span class="skill-level">{{.Level}}</span>
+            </div>
+            {{end}}
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Обо мне</h3>
+        <p>Я начинающий разработчик с опытом работы с Go, Python и C#. Имею опыт работы с различными реляционными базами данных, включая MySQL, PostgreSQL, SQLite, MariaDB и H2 Database. Увлекаюсь созданием чистого, эффективного кода и изучением новых технологий. В свободное время участвую в open-source проектах и работаю над личными проектами для расширения своего кругозора.</p>
+    </div>
+
+    <div class="social-links">
+        {{range .SocialLinks}}
+        <a href="{{.URL}}" target="_blank" class="social-link" title="{{.Platform}}">
+            <i class="{{.Icon}}"></i>
+        </a>
+        {{end}}
+    </div>
+
+    <div class="contact">
+        <p>Свяжитесь со мной: <a href="mailto:{{.ContactEmail}}">{{.ContactEmail}}</a></p>
+    </div>
+</div>
+
+<script src="/static/js/script.js"></script>
+</body>
+</html>
