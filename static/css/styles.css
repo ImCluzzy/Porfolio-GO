@@ -164,6 +164,19 @@ h3 {
 .contact a:hover {
     color: var(--accent);
 }
+.location {
+    text-align: center;
+    color: var(--accent);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.location i {
+    margin-right: 0.5rem;
+    color: var(--highlight);
+}
+
 
 @media (max-width: 768px) {
     h1 {
